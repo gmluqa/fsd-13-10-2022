@@ -2,7 +2,7 @@
 
 class Caballo {
     constructor() {
-        this.timeToComplete = Math.random()
+        this.timeToComplete = Math.random() * 10000
     }
 }
 
@@ -27,7 +27,8 @@ let promiseOfAllHorses = Promise.all([caballo1, caballo2, caballo3, caballo4])
 race = horseSpeedArray => {
     return new Promise((res) => {
         const min = Math.min(...horseSpeedArray)
-        res(console.log(min))
+        const index = horseSpeedArray.indexOf(min);
+        res(console.log(`Horse ${index + 1} has won with a speed of ${min}!`))
     })
 }
 
